@@ -126,27 +126,24 @@ Module.register("MMM-ScreenSaver", {
             bouncingImageElement.style.height = imgHeight + "px";
     
             const bounce = () => {
-                // Re-fetch dimensions in case they have changed
-                const currentWidth = bouncingImageElement.offsetWidth;
-                const currentHeight = bouncingImageElement.offsetHeight;
-            
-                if (xPos + currentWidth > window.innerWidth || xPos < 0) {
+                if (xPos + imgWidth > window.innerWidth || xPos < 0) {
                     xSpeed = -xSpeed;
                 }
-                if (yPos + currentHeight > window.innerHeight || yPos < 0) {
+                if (yPos + imgHeight > window.innerHeight || yPos < 0) {
                     ySpeed = -ySpeed;
                 }
-        
+            
                 xPos += xSpeed;
                 yPos += ySpeed;
-        
+            
                 bouncingImageElement.style.left = xPos + 'px';
                 bouncingImageElement.style.top = yPos + 'px';
-        
+            
                 if (moduleInstance.isActive) { // Use moduleInstance here instead of this
                     requestAnimationFrame(bounce);
                 }
             };
+            
         
             bounce();
         };
