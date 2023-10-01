@@ -1,0 +1,21 @@
+#screensaver {
+    position: absolute;
+    top: 0 !important;
+    left: 0 !important;
+    width: 2500px !important;
+    height: 1500px !important;
+    background-color: rgba(0,0,0,.8);          /* Background color */
+    display: none;                    /* Initially hidden; will be shown when screensaver is active */
+    z-index: 9999999;                   /* Ensure it's on top of other modules */
+    transition: background-color 0.5s ease-in-out;
+}
+
+#screensaver .bouncing-image {
+    max-width: 80%;                  /* or whatever you prefer */
+    max-height: 80%;                 /* or whatever you prefer */
+    position: absolute;              /* So we can move it around within #screensaver */
+    background-size: contain;        
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
